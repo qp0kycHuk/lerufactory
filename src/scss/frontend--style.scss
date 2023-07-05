@@ -2,8 +2,8 @@
   --bg1      : #E9EAEC;
   --bg2      : #F4F5F6;
   --bg3      : #fff;
-  --font-base: 'Roboto', arial, helvetica, sans-serif;
-
+  --font-base: 'Fira Sans', arial, helvetica, sans-serif;
+  --font-alt : 'Lithium Typeface (LT)';
 }
 
 [data-theme="dark"] {
@@ -16,43 +16,67 @@ body {
   display       : flex;
   flex-direction: column;
   min-height    : 100vh;
-  background    : var(--bg1);
+  overflow-y    : scroll;
+  background    : var(--bg3);
+  font-family   : var(--font-base);
 
-  * {
-    font-family: var(--font-base);
+}
+
+@layer components {
+  .btn {
+    font-size     : 17px;
+    font-weight   : 300;
+    text-transform: uppercase;
+  }
+
+  .absolute-image {
+    position      : absolute;
+    top           : 0;
+    left          : 0;
+    width         : 100%;
+    height        : 100%;
+    object-fit    : cover;
+    pointer-events: none;
+    user-select   : none;
+
+  }
+
+  .section-padding {
+    padding-top   : 95px;
+    padding-bottom: 95px;
+  }
+
+  .title {
+    font-family   : var(--font-alt);
+    font-size     : 50px;
+    font-weight   : 400;
+    line-height   : normal;
+    color         : theme('colors.stone.400');
+    text-transform: uppercase;
+  }
+}
+
+
+.started {
+  &-buner {
+    position: relative;
+    height  : 642px;
+
+    &-content {
+      position: relative;
+      padding : 112px 70px 80px;
+      z-index : 2;
+    }
   }
 
 }
 
-.active-enabled {
-  display: none !important;
 
-}
-
-.toggle-active,
-.tab-active,
-.active {
-  .active-disabled {
-    display: none !important;
-  }
-
-  .active-enabled {
-    display: flex !important;
-  }
-}
-
-.card {
-  $a: 1;
-
-  display    : inline;
-  margin-left: 10px;
-
-  @media (max-width:theme('screens.md')) {
-    display: flex;
-  }
-
-  &-title {
-    font-size  : 20px;
-    font-weight: 600;
+.about {
+  &-video {
+    width        : 680px;
+    height       : 396px;
+    overflow     : hidden;
+    border-radius: 15px;
   }
 }

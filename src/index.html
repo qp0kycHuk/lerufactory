@@ -9,15 +9,93 @@
 </head>
 
 <body>
-  <section id="root">
-    <div class="flex gap-4">
-      <button class="rounded-lg w-60 btn btn-black btn-fill">button</button>
-      <button class="rounded-lg w-60 btn btn-primary btn-fill">button</button>
-      <button class="rounded-lg w-60 btn btn-blue btn-fill">button</button>
-      <button class="rounded-lg w-60 btn btn-green btn-fill">button</button>
-      <button class="rounded-lg w-60 btn btn-yellow btn-fill">button</button>
-    </div>
-  </section>
+  <div id="root">
+    <header class="flex items-center pt-8 pb-6 header">
+      <div class="mr-auto -ml-1 header-logo">
+        <img src="img/logo.png" alt="">
+      </div>
+      <div class="flex items-center">
+        <svg class="mr-1 text-lg icon text-stone-500">
+          <use xlink:href="img/icons.svg#location" />
+        </svg>
+        <div class="text-lg font-light text-zinc-700">Москва</div>
+      </div>
+      <button class="font-light uppercase rounded btn btn-gray btn-contur px-9 ml-14">ОСТАВИТЬ ЗАЯВКУ</button>
+      <button class="btn btn-stone btn-icon ml-9">
+        <svg class="icon text-3.5xl">
+          <use xlink:href="img/icons.svg#share" />
+        </svg>
+      </button>
+      <button class="ml-3 btn btn-stone btn-icon btn-text">
+        <svg class="text-5xl icon">
+          <use xlink:href="img/icons.svg#menu" />
+        </svg>
+      </button>
+    </header>
+
+    <section class="pt-0 section-padding started">
+      <div class="started-buner rounded-[20px] overflow-hidden">
+        <div class="absolute inset-0 started-buner-img">
+          <picture>
+            <img src="img/started-desctop.jpg" alt="" class="absolute-image">
+          </picture>
+        </div>
+        <div class="started-buner-content">
+          <div class="text-gray text-[25px] font-light mb-2.5 leading-none">Швейная фабрика Leru Group</div>
+          <div class="text-stone-700 text-[45px] font-alt uppercase leading-[1.1] tracking-[0.45px] mb-2.5">
+            Пошив брендовой (женской) одежды <br>
+            в сегменте middle-up и премиум
+          </div>
+          <div class="text-xl font-light leading-[1.2] text-gray mb-11">
+            Помогаем компаниям создавать качественные и <br>
+            привлекательные коллекции, быть конкурентными <br>
+            на рынке. Пошив оптом от 1 изделия.
+          </div>
+          <div class="mb-4 text-xl font-light leading-[1.2] text-gray">
+            У вас есть задача в <br>
+            производстве одежды?
+          </div>
+          <div class="flex gap-5">
+            <button class="btn btn-stone-600 btn-fill px-9 btn-[56px] rounded">ДА</button>
+            <button class="btn btn-gray btn-contur px-9 btn-[56px] rounded">НЕТ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex about section-padding gap-[72px]">
+      <div class="relative about-video">
+        <div class="absolute inset-0">
+          <img src="img/about-img.jpg" alt="" class="absolute-image">
+        </div>
+        <a href="javascript:;" class="absolute inset-0 flex btn-group">
+          <button class="m-auto btn btn-stone btn-light btn-icon btn-[100px] rounded-full">
+            <svg class="text-2xl icon">
+              <use xlink:href="img/icons.svg#play" />
+            </svg>
+          </button>
+        </a>
+      </div>
+      <div class="flex flex-col flex-grow">
+        <div class="title mb-7">помогаем расти</div>
+        <div class="text-2.1xl font-light">
+          Производственный сервис <br>
+          для брендов в среднем и <br>
+          премиальном сегментах
+        </div>
+        <div class="flex mt-auto">
+          <div class="basis-1/2">
+            <div class="text-5xl font-alt text-stone-400">2015</div>
+            <div class="text-xl font-light">Год основания <br> компании</div>
+          </div>
+          <div class="basis-1/2">
+            <div class="text-5xl font-alt text-stone-400">100 +</div>
+            <div class="text-xl font-light">Количество <br> успешных коллекций</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>

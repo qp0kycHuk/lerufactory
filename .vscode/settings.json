@@ -3,10 +3,7 @@
   "less.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss"
-  ],
+  "stylelint.validate": ["css", "scss"],
   "postcssSorting.config": {
     "order": [
       "custom-properties",
@@ -303,12 +300,15 @@
   "editor.indentSize": "tabSize",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "editor.formatOnPaste": false, // required 
+  "editor.formatOnPaste": false, // required
   "editor.formatOnType": false, // required
-  "editor.formatOnSave": true, // optional 
+  "editor.formatOnSave": true, // optional
   "editor.formatOnSaveMode": "file", // required to format on save
   "vs-code-prettier-eslint.prettierLast": false,
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
   }
 }

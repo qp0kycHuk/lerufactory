@@ -33,3 +33,9 @@ section {
     --section-width: calc(theme(screens.lg) - 29.98px);
   }
 }
+
+@screen xl {
+  :root {
+    --section-width: calc(theme(screens.xl) - 29.98px);
+  }
+}
