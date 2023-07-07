@@ -63,38 +63,520 @@
       </div>
     </section>
 
-    <section class="flex about section-padding gap-[72px]">
-      <div class="relative about-video">
-        <div class="absolute inset-0">
-          <img src="img/about-img.jpg" alt="" class="absolute-image">
-        </div>
-        <a href="javascript:;" class="absolute inset-0 flex btn-group">
-          <button class="m-auto btn btn-stone btn-light btn-icon btn-[100px] rounded-full">
-            <svg class="text-2xl icon">
-              <use xlink:href="img/icons.svg#play" />
-            </svg>
-          </button>
-        </a>
-      </div>
-      <div class="flex flex-col flex-grow">
-        <div class="title mb-7">помогаем расти</div>
-        <div class="text-2.1xl font-light">
-          Производственный сервис <br>
-          для брендов в среднем и <br>
-          премиальном сегментах
-        </div>
-        <div class="flex mt-auto">
-          <div class="basis-1/2">
-            <div class="text-5xl font-alt text-stone-400">2015</div>
-            <div class="text-xl font-light">Год основания <br> компании</div>
+    <section class="about section-padding">
+      <div class="flex gap-[72px]">
+        <div class="relative about-video">
+          <div class="absolute inset-0">
+            <img src="img/about-img.jpg" alt="" class="absolute-image">
           </div>
-          <div class="basis-1/2">
-            <div class="text-5xl font-alt text-stone-400">100 +</div>
-            <div class="text-xl font-light">Количество <br> успешных коллекций</div>
+          <%= _.template(require('./html-includes/absolute-video-button.html').default)() %>
+        </div>
+        <div class="flex flex-col flex-grow">
+          <div class="title mb-7">помогаем расти</div>
+          <div class="text-2.1xl font-light">
+            Производственный сервис <br>
+            для брендов в среднем и <br>
+            премиальном сегментах
+          </div>
+          <div class="flex mt-auto">
+            <div class="basis-1/2">
+              <div class="text-5xl font-alt text-stone-400">2015</div>
+              <div class="text-xl font-light">Год основания <br> компании</div>
+            </div>
+            <div class="basis-1/2">
+              <div class="text-5xl font-alt text-stone-400">100 +</div>
+              <div class="text-xl font-light">Количество <br> успешных коллекций</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mt-12 ">
+        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+          <div class="text-[27px] font-light mb-1">Пошив оптом от 1 изделия</div>
+          <div class="text-xl font-light">
+            Пошив оптом от 1 изделия
+            на собственном производстве
+            с соблюдением высоких требований к качеству
+          </div>
+          <button class="btn btn-icon btn-fill btn-stone absolute right-5 bottom-5 rounded-full btn-[37px]">
+            <div class="text-xl">?</div>
+          </button>
+        </div>
+        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+          <div class="text-[27px] font-light mb-1">Дизайн и конструирование</div>
+          <div class="text-xl font-light">
+            Дизайн и конструирование одежды
+            для вашего бренда, а также пошив
+            сигнального образца.
+          </div>
+        </div>
+        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+          <div class="text-[27px] font-light mb-1">Конкурентные цены</div>
+          <div class="text-xl font-light">
+            Конкурентные цены, высокий
+            уровень сервиса и доставка по
+            России.
+          </div>
+          <a href="javascript:;" class="absolute btn btn-text btn-gray right-8 bottom-6 ">
+            <span class="underline normal-case">Получить прайс-лист</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Одежда нашего производства понравится вашим клиентам -->
+    <section class="section-padding catalog">
+      <div class="section-top">
+        <div class="title">
+          Одежда нашего производства понравится вашим клиентам
+        </div>
+        <div class="section-top-description">
+          Качественные лекала и пошив, ценовые условия с нашей стороны, которые позволят вам зарабатывать и быть конкурентными.
+        </div>
+      </div>
+
+      <div class="px-2 -mx-2 catalog-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <div class="w-1/3 px-2 swiper-slide">
+            <div class="catalog-item">
+              <div class="catalog-item-img">
+                <img src="img/catalog-item.png" alt="" class="absolute-image">
+              </div>
+              <div class="catalog-item-title">Платья</div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.catalog-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.catalog-slider .slider-prev',
+          nextEl: '.catalog-slider .slider-next',
+        },
+        pagination: {
+          el: '.catalog-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function(currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+    <!-- Материалы, с которыми мы работаем -->
+    <section class="section-padding material">
+      <div class="section-top">
+        <div class="title">
+          Материалы, с которыми мы работаем
+        </div>
+      </div>
+
+      <div class="-mx-2 material-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <div class="w-1/3 px-2 swiper-slide">
+            <div class="material-item">
+              <div class="material-item-img image-ratio image-[395/286]">
+                <img src="img/material.png" alt="" class="absolute-image">
+              </div>
+              <div class="material-item-title">Шёлк</div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.material-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.material-slider .slider-prev',
+          nextEl: '.material-slider .slider-next',
+        },
+        pagination: {
+          el: '.material-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function(currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+    <!-- Галерея созданных нами моделей -->
+    <section class="section-padding models">
+      <div class="section-top">
+        <div class="title">
+          Галерея созданных нами моделей
+        </div>
+        <div class="section-top-description">
+          Оцените по фото и видео качество исполнения. Одна из наших задач — репутация вашего бренда.
+        </div>
+      </div>
+      <div class="models-slider swiper -m-1.5">
+        <div class="grid grid-flow-col grid-rows-2 swiper-wrapper">
+          <% for(let i = 0; i < 20; i++) { %>
+          <div class="swiper-slide w-1/4 p-1.5">
+            <div class="models-item">
+              <div class="models-item-img image-ratio image-[309/485]">
+                <img src="img/model.jpg" alt="" class="absolute-image">
+              </div>
+              <%= _.template(require(i % 2 == 0 ? './html-includes/absolute-video-button.html':'./html-includes/absolute-image-button.html').default)() %>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.models-slider', {
+        slidesPerView: 4,
+        grid: {
+          rows: 2
+        },
+        navigation: {
+          prevEl: '.models-slider .slider-prev',
+          nextEl: '.models-slider .slider-next',
+        },
+        pagination: {
+          el: '.models-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function(currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+    <!-- Задачи, которые мы решим для вас -->
+    <section class="flex items-start question section-padding">
+      <div class="sticky top-10 question-description">
+        <div class="title mb-7">
+          Задачи, которые мы решим для вас
+        </div>
+        <div class="text-[25px] font-light">
+          Окажем услуги, как в комплексе
+          и под ключ, так и по отдельности
+        </div>
+        <div class="mb-4 text-xl font-light leading-[1.2] text-gray mt-15">
+          У вас есть задача в <br>
+          производстве одежды?
+        </div>
+        <div class="flex gap-5">
+          <button class="btn btn-stone-600 btn-fill px-9 btn-[56px] rounded">ДА</button>
+        </div>
+      </div>
+      <div class="question-items">
+        <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
+          <div class="flex items-center">
+            <div class="text-[27px] font-light">Пошив по вашим лекалам</div>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+              <svg class="text-2xl transition icon">
+                <use xlink:href="img/icons.svg#plus" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-start mt-3 is-active-enabled" data-toggle-content data-toggle-static>
+            <div class="w-64 rounded-[10px] overflow-hidden flex-shrink-0">
+              <img src="img/test.jpg" alt="">
+            </div>
+            <div class="ml-6 text-xl font-light">
+              Онлайн-генератор случайного текста, Lorem
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+            </div>
+          </div>
+        </div>
+        <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
+          <div class="flex items-center">
+            <div class="text-[27px] font-light">Сигнальный образец</div>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+              <svg class="text-2xl transition icon">
+                <use xlink:href="img/icons.svg#plus" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-start mt-3 is-active-enabled" data-toggle-content data-toggle-static>
+            <div class="w-64 rounded-[10px] overflow-hidden flex-shrink-0">
+              <img src="img/test.jpg" alt="">
+            </div>
+            <div class="ml-6 text-xl font-light">
+              Онлайн-генератор случайного текста, Lorem
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+            </div>
+          </div>
+        </div>
+        <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
+          <div class="flex items-center">
+            <div class="text-[27px] font-light">Разработка лекал</div>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+              <svg class="text-2xl transition icon">
+                <use xlink:href="img/icons.svg#plus" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-start mt-3 is-active-enabled" data-toggle-content data-toggle-static>
+            <div class="w-64 rounded-[10px] overflow-hidden flex-shrink-0">
+              <img src="img/test.jpg" alt="">
+            </div>
+            <div class="ml-6 text-xl font-light">
+              Онлайн-генератор случайного текста, Lorem
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+            </div>
+          </div>
+        </div>
+        <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
+          <div class="flex items-center">
+            <div class="text-[27px] font-light">Разработка коллекции под ключ</div>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+              <svg class="text-2xl transition icon">
+                <use xlink:href="img/icons.svg#plus" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-start mt-3 is-active-enabled" data-toggle-content data-toggle-static>
+            <div class="w-64 rounded-[10px] overflow-hidden flex-shrink-0">
+              <img src="img/test.jpg" alt="">
+            </div>
+            <div class="ml-6 text-xl font-light">
+              Онлайн-генератор случайного текста, Lorem
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Получите прайс-лист на услуги -->
+    <section class="price-list section-padding">
+      <div class="price-list-block">
+        <div class="text-center title">Получите прайс-лист на услуги</div>
+        <div class="text-center text-[25px] font-light mb-8">На ваш телефон придет ссылка на актуальные цены</div>
+        <div class="flex justify-center gap-4">
+          <input type="tel" class="flex-grow-0 rounded form-input w-52" placeholder="Введите ваш телефон">
+          <button class="rounded btn btn-stone btn-fill w-52">ПОЛУЧИТЬ ПРАЙС</button>
+        </div>
+        <div class="mt-4">
+          <label class="flex items-center justify-center gap-2 form-field">
+            <input type="checkbox" class="form-input-checkbox" checked>
+            <div class="form-checkbox-target">
+              <svg class="icon">
+                <use xlink:href="img/icons.svg#gal-ochka" />
+              </svg>
+            </div>
+            <div class="text-[13px] font-light">
+              Я соглашаюсь с политикой <a href="javascript:;" class="underline">обработки персональных данных</a>
+            </div>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- решаем бизнес-задачи. Кейсы. -->
+    <section class="case section-padding">
+      <div class="section-top">
+        <div class="title">
+          Не только шьем одежду, но и <br>
+          решаем бизнес-задачи. Кейсы.
+        </div>
+      </div>
+      <div class="-mx-3 case-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 3; i++) { %>
+          <div class="w-full px-3 swiper-slide">
+            <div class="case-item">
+              <div class="relative case-item-img">
+                <img src="img/test.jpg" alt="" class="absolute-image">
+              </div>
+              <div class="case-item-content">
+                <div class="text-stone-400 mb-5 text-[27px] font-light">Кейс № 1.</div>
+                <div class="text-stone-400 mb-2 text-[25px] font-light"> Модель продаж по предзаказу</div>
+                <div class="text-xl font-light text-stone-400">
+                  Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+                </div>
+                <button class="mt-12 btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.case-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.case-slider .slider-prev',
+          nextEl: '.case-slider .slider-next',
+        },
+        pagination: {
+          el: '.case-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function(currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+    <section class="section-padding">
+      <div class="section-top">
+        <div>
+          <div class="mb-2 text-xl font-light">
+            Если вы в самом начале пути
+          </div>
+          <div class="title">
+            Мы объединим ваши идеи, смыслы бренда, модные тендеции и реальные запросы аудитории, чтобы создать востребованную на рынке коллекцию женской одежды.
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="section-top-description">
+          <button class="btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Предложите свою смету на пошив -->
+    <section class="section-padding">
+      <div class="flex gap-18">
+        <div>
+          <div class="mb-2 text-lg text-stone-400">Поставьте нам задачу</div>
+          <div class="mb-5 title">
+            Предложите свою смету <br>
+            на пошив
+          </div>
+          <div class="text-[25px] font-light leading-tight">
+            Вы можете нам поставить задачу сами, сообщив объем и предельную стоимость коллекции. А мы предложим решение задачи. И если оно вам понравится, то начнем сотрудничество.
+          </div>
+          <button class="mt-14 btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
+        </div>
+        <div class="w-[662px] h-[448px] relative rounded-2xl overflow-hidden flex-shrink-0 ml-auto">
+          <img src="img/your-smeta.jpg" alt="" class="absolute-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Поддержка коллекции и пошив от 1 изделия -->
+    <section class="section-padding">
+      <div class="section-top">
+        <div>
+          <div class="mb-2 text-xl font-light">
+            Возможности для развития бренда
+          </div>
+          <div class="title">
+            Поддержка коллекции и пошив от 1 изделия
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-18">
+        <div class="w-[537px] h-[370px] relative rounded-2xl overflow-hidden flex-shrink-0">
+          <img src="img/support.jpg" alt="" class="absolute-image">
+        </div>
+        <div class="pt-7">
+          <div class="text-[25px] font-light leading-tight">
+            Вы можете работать со своими клиентами по <br>
+            предзаказу. Например, выставить в шоуруме <br>
+            образец и принимать заказы на пошив. Или мы <br>
+            готовы по одной единице товара пополнять <br>
+            размерный ряд в вашем магазине. Работаем с <br>
+            брендами по всей России.
+          </div>
+          <button class="mt-14 btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Мы ваш производственный хаб в fast fashion -->
+    <section class="section-padding">
+      <div class="section-top">
+        <div class="title">Мы ваш производственный хаб в fast fashion</div>
+      </div>
+      <div class="flex gap-24">
+        <div class="self-center">
+          <div class="text-xl font-light leading-normal">
+            <span class="whitespace-pre-line">Ваша задача, как основателя или продюсера бренда,
+              работать над продуктам и добиваться результата на
+              рынке. Задача нашей компании быть вашей
+              командой и помогать достигать цели, решая фактор
+              производства.
+
+              Мы заинтересованы с вами в долгосрочном
+              сотрудничестве, поэтому постоянно совершенствуемся,
+              стремимся быть выгодными для вам и по ценам, и по
+              уровню возможностей, которые открываются вашему
+              бизнесу.
+
+              Помогаем развиваться компаниям разного масштаба
+              и степени зрелости, в т.ч. и тем, кто только заходит на
+              рынок.</span>
+          </div>
+          <div class="mt-14">
+            <div class="text-[27px] font-light leading-none">Валерия Утушкина </div>
+            <div class="text-[17px] font-light leading-none mt-1">Основатель и CEO Leru Group </div>
+          </div>
+        </div>
+        <div class="w-[582px] h-[613px] relative rounded-2xl overflow-hidden flex-shrink-0">
+          <img src="img/hub.jpg" alt="" class="absolute-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- В реализации любого проекта важна команда -->
+    <section class="section-padding team">
+      <div class="section-top">
+        <div class="title">
+          В реализации любого проекта важна команда
+        </div>
+        <div class="section-top-description">
+          Мы объединены целью — быть продуктивными и обеспечить выгодный сервис высокого уровня.
+        </div>
+      </div>
+      <div class="-mx-2 team-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <div class="w-1/3 px-2 swiper-slide">
+            <div class="team-item">
+              <div class="team-item-img image-ratio image-[395/480]">
+                <img src="img/dude.png" alt="" class="absolute-image">
+              </div>
+              <div class="team-item-content">
+                <div class="team-item-title text-[27px] font-light mb-1.5">Антон Демидов</div>
+                <div class="mb-2 text-lg font-light">Дизайнер</div>
+                <div class="text-xl font-light">
+                  Соединяю смыслы с формой и функциональностью
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.team-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.team-slider .slider-prev',
+          nextEl: '.team-slider .slider-next',
+        },
+        pagination: {
+          el: '.team-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function(currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
   </div>
 </body>
 

@@ -2,6 +2,7 @@ import showPass from './show-pass'
 import theme from './theme'
 import phonemask from './phonemask/phonemask'
 import scrollTo from './scrollTo'
+import fancybox from './fancybox'
 import tab from 'npm-kit-tab'
 import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
@@ -28,6 +29,7 @@ function loadHandler() {
   toggle.init()
   ripple.init()
   theme.init()
+  fancybox.init()
   phonemask.init('[type="tel"]')
 
   ripple.attach('.btn')

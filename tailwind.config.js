@@ -56,8 +56,13 @@ module.exports = {
       alt: 'var(--font-alt)',
     },
 
+
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
+      spacing: {
+        15: '3.75rem',
+        18: '4.5rem',
+      },
       inputSize: elementsSizes,
       btnSize: elementsSizes,
       backgroundColor: {
