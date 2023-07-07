@@ -6,6 +6,7 @@
       display         : flex;
       flex-grow       : 1;
       position        : relative;
+      height          : var(--size);
       padding         : theme('spacing.2') theme('spacing.4');
       background-color: var(--bg3);
       border          : 1px solid theme('colors.gray / 20%');

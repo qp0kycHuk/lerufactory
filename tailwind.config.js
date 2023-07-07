@@ -100,7 +100,7 @@ module.exports = {
       lightColorOpacityHover: 0.24,
       withFocusStyles: true
     }),
-    require('@qpokychuk/tailwind-image-ratio-plugin'),
+    require('@qpokychuk/tailwind-ratio-plugin'),
     require('tailwindcss-interaction-media'),
     require('./tailwind.form.js'),
 

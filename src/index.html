@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Worked</title>
+  <title>Пошив брендовой (женской) одежды</title>
 </head>
 
 <body>
@@ -26,12 +26,30 @@
           <use xlink:href="img/icons.svg#share" />
         </svg>
       </button>
-      <button class="ml-3 btn btn-stone btn-icon btn-text">
+      <button class="ml-3 btn btn-stone btn-icon btn-text" data-toggle-link="menu">
         <svg class="text-5xl icon">
           <use xlink:href="img/icons.svg#menu" />
         </svg>
       </button>
     </header>
+
+    <div class="menu card" id="menu">
+      <div class="flex flex-col items-start gap-3">
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">Кейсы</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">Контакты</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">каталог
+          решений</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">блог</a>
+      </div>
+      <div class="mt-auto">
+        <img src="img/logo.png" alt="">
+      </div>
+      <button class="absolute right-24 top-2 btn btn-stone btn-icon" data-toggle-link="menu">
+        <svg class="text-2xl icon">
+          <use xlink:href="img/icons.svg#cross" />
+        </svg>
+      </button>
+    </div>
 
     <section class="pt-0 section-padding started">
       <div class="started-buner rounded-[20px] overflow-hidden">
@@ -91,7 +109,7 @@
         </div>
       </div>
       <div class="grid grid-cols-3 gap-4 mt-12 ">
-        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+        <div class="about-item card rounded-[10px] text-gray">
           <div class="text-[27px] font-light mb-1">Пошив оптом от 1 изделия</div>
           <div class="text-xl font-light">
             Пошив оптом от 1 изделия
@@ -102,7 +120,7 @@
             <div class="text-xl">?</div>
           </button>
         </div>
-        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+        <div class="about-item card rounded-[10px] text-gray">
           <div class="text-[27px] font-light mb-1">Дизайн и конструирование</div>
           <div class="text-xl font-light">
             Дизайн и конструирование одежды
@@ -110,7 +128,7 @@
             сигнального образца.
           </div>
         </div>
-        <div class="about-item bg-neutral-100 rounded-[10px] text-gray">
+        <div class="about-item card rounded-[10px] text-gray">
           <div class="text-[27px] font-light mb-1">Конкурентные цены</div>
           <div class="text-xl font-light">
             Конкурентные цены, высокий
@@ -131,7 +149,8 @@
           Одежда нашего производства понравится вашим клиентам
         </div>
         <div class="section-top-description">
-          Качественные лекала и пошив, ценовые условия с нашей стороны, которые позволят вам зарабатывать и быть конкурентными.
+          Качественные лекала и пошив, ценовые условия с нашей стороны, которые позволят вам зарабатывать и быть
+          конкурентными.
         </div>
       </div>
 
@@ -139,7 +158,7 @@
         <div class="swiper-wrapper">
           <% for(let i = 0; i < 10; i++) { %>
           <div class="w-1/3 px-2 swiper-slide">
-            <div class="catalog-item">
+            <div class="catalog-item card">
               <div class="catalog-item-img">
                 <img src="img/catalog-item.png" alt="" class="absolute-image">
               </div>
@@ -161,7 +180,7 @@
         pagination: {
           el: '.catalog-slider .slider-pagination',
           type: 'fraction',
-          renderFraction: function(currentClass, totalClass) {
+          renderFraction: function (currentClass, totalClass) {
             return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
           }
         }
@@ -180,8 +199,8 @@
         <div class="swiper-wrapper">
           <% for(let i = 0; i < 10; i++) { %>
           <div class="w-1/3 px-2 swiper-slide">
-            <div class="material-item">
-              <div class="material-item-img image-ratio image-[395/286]">
+            <div class="material-item card">
+              <div class="material-item-img ratio ratio-[395/286]">
                 <img src="img/material.png" alt="" class="absolute-image">
               </div>
               <div class="material-item-title">Шёлк</div>
@@ -202,7 +221,7 @@
         pagination: {
           el: '.material-slider .slider-pagination',
           type: 'fraction',
-          renderFraction: function(currentClass, totalClass) {
+          renderFraction: function (currentClass, totalClass) {
             return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
           }
         }
@@ -223,8 +242,8 @@
         <div class="grid grid-flow-col grid-rows-2 swiper-wrapper">
           <% for(let i = 0; i < 20; i++) { %>
           <div class="swiper-slide w-1/4 p-1.5">
-            <div class="models-item">
-              <div class="models-item-img image-ratio image-[309/485]">
+            <div class="models-item card">
+              <div class="models-item-img ratio ratio-[309/485]">
                 <img src="img/model.jpg" alt="" class="absolute-image">
               </div>
               <%= _.template(require(i % 2 == 0 ? './html-includes/absolute-video-button.html':'./html-includes/absolute-image-button.html').default)() %>
@@ -248,7 +267,7 @@
         pagination: {
           el: '.models-slider .slider-pagination',
           type: 'fraction',
-          renderFraction: function(currentClass, totalClass) {
+          renderFraction: function (currentClass, totalClass) {
             return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
           }
         }
@@ -277,7 +296,8 @@
         <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
           <div class="flex items-center">
             <div class="text-[27px] font-light">Пошив по вашим лекалам</div>
-            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
+              data-toggle-link>
               <svg class="text-2xl transition icon">
                 <use xlink:href="img/icons.svg#plus" />
               </svg>
@@ -289,14 +309,16 @@
             </div>
             <div class="ml-6 text-xl font-light">
               Онлайн-генератор случайного текста, Lorem
-              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем
+              текста-рыбы является известный "Lorem Ipsum" — латинский текст,
             </div>
           </div>
         </div>
         <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
           <div class="flex items-center">
             <div class="text-[27px] font-light">Сигнальный образец</div>
-            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
+              data-toggle-link>
               <svg class="text-2xl transition icon">
                 <use xlink:href="img/icons.svg#plus" />
               </svg>
@@ -308,14 +330,16 @@
             </div>
             <div class="ml-6 text-xl font-light">
               Онлайн-генератор случайного текста, Lorem
-              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем
+              текста-рыбы является известный "Lorem Ipsum" — латинский текст,
             </div>
           </div>
         </div>
         <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
           <div class="flex items-center">
             <div class="text-[27px] font-light">Разработка лекал</div>
-            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
+              data-toggle-link>
               <svg class="text-2xl transition icon">
                 <use xlink:href="img/icons.svg#plus" />
               </svg>
@@ -327,14 +351,16 @@
             </div>
             <div class="ml-6 text-xl font-light">
               Онлайн-генератор случайного текста, Lorem
-              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем
+              текста-рыбы является известный "Lorem Ipsum" — латинский текст,
             </div>
           </div>
         </div>
         <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
           <div class="flex items-center">
             <div class="text-[27px] font-light">Разработка коллекции под ключ</div>
-            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
+              data-toggle-link>
               <svg class="text-2xl transition icon">
                 <use xlink:href="img/icons.svg#plus" />
               </svg>
@@ -346,7 +372,8 @@
             </div>
             <div class="ml-6 text-xl font-light">
               Онлайн-генератор случайного текста, Lorem
-              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем
+              текста-рыбы является известный "Lorem Ipsum" — латинский текст,
             </div>
           </div>
         </div>
@@ -355,7 +382,7 @@
 
     <!-- Получите прайс-лист на услуги -->
     <section class="price-list section-padding">
-      <div class="price-list-block">
+      <div class="price-list-block card">
         <div class="text-center title">Получите прайс-лист на услуги</div>
         <div class="text-center text-[25px] font-light mb-8">На ваш телефон придет ссылка на актуальные цены</div>
         <div class="flex justify-center gap-4">
@@ -390,7 +417,7 @@
         <div class="swiper-wrapper">
           <% for(let i = 0; i < 3; i++) { %>
           <div class="w-full px-3 swiper-slide">
-            <div class="case-item">
+            <div class="case-item card">
               <div class="relative case-item-img">
                 <img src="img/test.jpg" alt="" class="absolute-image">
               </div>
@@ -398,7 +425,9 @@
                 <div class="text-stone-400 mb-5 text-[27px] font-light">Кейс № 1.</div>
                 <div class="text-stone-400 mb-2 text-[25px] font-light"> Модель продаж по предзаказу</div>
                 <div class="text-xl font-light text-stone-400">
-                  Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+                  Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник
+                  любого дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
+                  Ipsum" — латинский текст,
                 </div>
                 <button class="mt-12 btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
               </div>
@@ -419,7 +448,7 @@
         pagination: {
           el: '.case-slider .slider-pagination',
           type: 'fraction',
-          renderFraction: function(currentClass, totalClass) {
+          renderFraction: function (currentClass, totalClass) {
             return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
           }
         }
@@ -433,7 +462,8 @@
             Если вы в самом начале пути
           </div>
           <div class="title">
-            Мы объединим ваши идеи, смыслы бренда, модные тендеции и реальные запросы аудитории, чтобы создать востребованную на рынке коллекцию женской одежды.
+            Мы объединим ваши идеи, смыслы бренда, модные тендеции и реальные запросы аудитории, чтобы создать
+            востребованную на рынке коллекцию женской одежды.
           </div>
         </div>
       </div>
@@ -454,7 +484,8 @@
             на пошив
           </div>
           <div class="text-[25px] font-light leading-tight">
-            Вы можете нам поставить задачу сами, сообщив объем и предельную стоимость коллекции. А мы предложим решение задачи. И если оно вам понравится, то начнем сотрудничество.
+            Вы можете нам поставить задачу сами, сообщив объем и предельную стоимость коллекции. А мы предложим решение
+            задачи. И если оно вам понравится, то начнем сотрудничество.
           </div>
           <button class="mt-14 btn btn-gray btn-contur btn-[56px] rounded">ПОДРОБНЕЕ</button>
         </div>
@@ -543,12 +574,12 @@
         <div class="swiper-wrapper">
           <% for(let i = 0; i < 10; i++) { %>
           <div class="w-1/3 px-2 swiper-slide">
-            <div class="team-item">
-              <div class="team-item-img image-ratio image-[395/480]">
+            <div class="post-item card">
+              <div class="post-item-img ratio ratio-[395/480]">
                 <img src="img/dude.png" alt="" class="absolute-image">
               </div>
-              <div class="team-item-content">
-                <div class="team-item-title text-[27px] font-light mb-1.5">Антон Демидов</div>
+              <div class="post-item-content">
+                <div class="post-item-title text-[27px] font-light mb-1.5">Антон Демидов</div>
                 <div class="mb-2 text-lg font-light">Дизайнер</div>
                 <div class="text-xl font-light">
                   Соединяю смыслы с формой и функциональностью
@@ -571,12 +602,378 @@
         pagination: {
           el: '.team-slider .slider-pagination',
           type: 'fraction',
-          renderFraction: function(currentClass, totalClass) {
+          renderFraction: function (currentClass, totalClass) {
             return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
           }
         }
       })
     </script>
+
+    <!-- Компании и бренды, с которыми мы сотрудничаем -->
+    <section class="section-padding partners">
+      <div class="section-top">
+        <div class="title">
+          Компании и бренды, с <br>
+          которыми мы сотрудничаем
+        </div>
+        <div class="section-top-description">
+          Мы всегда за долгие отношения, отсюда и фокус на решении бизнес-задачи заказчика. Поэтому с нами работают.
+        </div>
+      </div>
+      <div class="grid grid-cols-6 gap-4">
+        <% for(let i = 0; i < 6; i++) { %>
+        <div class="rounded-[20px] ratio ratio-1/1 card">
+          <img src="img/cloudpayments.png" alt="" class="object-scale-down absolute-image">
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="section-padding reviews">
+      <div class="section-top">
+        <div class="title">
+          Отзывы
+        </div>
+        <div class="section-top-description">
+          Доверие достигается трудом и результатами наших заказчиков.
+        </div>
+      </div>
+      <div class="-mx-2 reviews-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <div class="w-1/3 px-2 swiper-slide">
+            <div class="post-item card">
+              <div class="post-item-img ratio ratio-[395/480]">
+                <img src="img/dude.png" alt="" class="absolute-image">
+              </div>
+              <div class="post-item-content">
+                <div class="flex items-center">
+                  <div>
+                    <div class="post-item-title text-[27px] font-light mb-1">Анна Волчок</div>
+                    <div class="text-lg font-light">TexIco</div>
+                  </div>
+                  <a href="https://youtu.be/VOPZf3zWceo" data-fancybox
+                    class="ml-auto btn btn-stone btn-light btn-icon btn-[100px] rounded-full">
+                    <svg class="text-2xl icon">
+                      <use xlink:href="img/icons.svg#play" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.reviews-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.reviews-slider .slider-prev',
+          nextEl: '.reviews-slider .slider-next',
+        },
+        pagination: {
+          el: '.reviews-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+    <!-- Как мы выстраиваем сотрудничество? -->
+    <section class="section-padding cooperation" data-tab-cover>
+      <div class="flex gap-24">
+        <div class="">
+          <div class="mb-8 title">
+            Как мы выстраиваем сотрудничество?
+          </div>
+          <div class="font-light text-[25px]">
+            Мы потрудились над схемой нашего <br>
+            взаимодействия, чтобы вы экономили своё <br>
+            время, а ваш проект был реализован <br>
+            своевременно и по привлекательной цене
+          </div>
+          <div class="grid grid-cols-2 gap-3 mt-8">
+            <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start btn-[90px] px-7"
+              data-tab-link="cooperation-1">
+              <span class="text-[27px]">1. ЗНАКОМСТВО</span>
+            </button>
+            <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start btn-[90px] px-7"
+              data-tab-link="cooperation-2">
+              <span class="text-[27px]">2. РЕШЕНИЕ</span>
+            </button>
+            <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start btn-[90px] px-7"
+              data-tab-link="cooperation-3">
+              <span class="text-[27px]">3. ДОГОВОР</span>
+            </button>
+            <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start btn-[90px] px-7"
+              data-tab-link="cooperation-4">
+              <span class="text-[27px]">4. ПРОИЗВОДСТВО</span>
+            </button>
+            <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start btn-[90px] px-7"
+              data-tab-link="cooperation-5">
+              <span class="text-[27px]">5. ДОСТАВКА.</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex-shrink-0 tab-content-cover cooperation-content">
+          <div class="tab-content" data-tab-content="cooperation-1">
+            <div class="cooperation-form card">
+              <div class="text-[27px] font-light mb-4">1 ЗНАКОМСТВО</div>
+              <div class="text-xl font-light">
+                На этом этапе нам важно понять реальную вашу
+                задачу, чтобы на следующем шаге предложить
+                оптимальное цене и качеству решение.
+              </div>
+              <div class="flex items-center mt-8">
+                <a href="javascript:;" class="text-lg sm:text-2xl btn btn-text btn-gray font-feature">
+                  +7 (999) 252 99 99
+                </a>
+                <a href="javascript:;" class="ml-6 btn btn-text btn-stone">
+                  <svg class="text-2xl icon">
+                    <use xlink:href="img/icons.svg#whatsapp" />
+                  </svg>
+                </a>
+
+                <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+                  <svg class="text-2xl icon">
+                    <use xlink:href="img/icons.svg#telegramm" />
+                  </svg>
+                </a>
+              </div>
+              <div class="mt-3 text-lg font-light sm:text-2xl">Заказ обратного звонка</div>
+              <div class="flex gap-3 mt-5 sm:gap-3 max-md:flex-col">
+                <input type="text" placeholder="Введите ваше имя" class="w-full rounded md:w-56 form-input">
+                <input type="tel" placeholder="Введите ваш телефон" class="w-full rounded md:w-56 form-input">
+              </div>
+              <div class="flex items-start gap-3 mt-5 sm:gap-3 max-md:flex-col">
+                <label class="items-start cursor-pointer form-field form-checkbox">
+                  <input type="checkbox" class="form-input-checkbox" checked>
+                  <div class="form-checkbox-target">
+                    <svg class="icon">
+                      <use xlink:href="./img/icons.svg#gal-ochka" />
+                    </svg>
+                  </div>
+                  <div class="ml-3 text-xs font-light">
+                    Я соглашаюсь с политикой<br>
+                    <a href="javascript:;" class="underline underline-offset-4 hover:opacity-80 active:opacity-60">
+                      обработки персональных данных
+                    </a>
+                  </div>
+                </label>
+                <button class="w-full ml-auto rounded md:w-56 btn btn-stone btn-fill">ОБРАТНЫЙ ЗВОНОК</button>
+              </div>
+              <div class="mt-14">
+                <button class="border-b btn btn-gray btn-text border-gray" data-tab-link="cooperation-2">
+                  СЛЕДУЮЩИЙ ШАГ
+                  <svg class="ml-4 icon ">
+                    <use xlink:href="img/icons.svg#arrow-right" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" data-tab-content="cooperation-2">РЕШЕНИЕ</div>
+          <div class="tab-content" data-tab-content="cooperation-3">ДОГОВОР</div>
+          <div class="tab-content" data-tab-content="cooperation-4">ПРОИЗВОДСТВО</div>
+          <div class="tab-content" data-tab-content="cooperation-5">ДОСТАВКА</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ответы на частые вопросы -->
+    <section class="flex items-start question gap-18 section-padding">
+      <div class="sticky top-10 question-description">
+        <div class="title mb-7">
+          Ответы на частые вопросы
+        </div>
+        <div class="question-form card">
+          <div class="font-light mb-7 text-[25px] leading-snug">
+            Если в списке ниже вы не нашли ответ на свой вопрос, задайте его нам
+          </div>
+          <input type="text" placeholder="Введите ваше имя" class="w-full rounded form-input mb-1.5">
+          <input type="tel" placeholder="Введите ваш телефон" class="w-full rounded form-input mb-1.5">
+          <textarea placeholder="Задайте ваш вопрос" class="w-full mb-3 rounded form-input"></textarea>
+          <button class="w-full ml-auto rounded btn-[56px] btn btn-stone btn-fill">ОТПРАВИТЬ ВОПРОС</button>
+          <label class="items-start mt-3 cursor-pointer form-field form-checkbox">
+            <input type="checkbox" class="form-input-checkbox" checked>
+            <div class="form-checkbox-target">
+              <svg class="icon">
+                <use xlink:href="./img/icons.svg#gal-ochka" />
+              </svg>
+            </div>
+            <div class="ml-3 text-sm font-light">
+              Я соглашаюсь с политикой
+              <a href="javascript:;" class="underline underline-offset-4 hover:opacity-80 active:opacity-60">
+                обработки персональных данных
+              </a>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="question-items">
+        <% for(let i = 0; i < 5; i++) { %>
+        <div class="px-8 border rounded question-item border-stone py-7" data-toggle-cover>
+          <div class="flex items-center">
+            <div class="text-[27px] font-light">1. С какими видами ткани вы работете?</div>
+            <button class="ml-auto border btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
+              data-toggle-link>
+              <svg class="text-2xl transition icon">
+                <use xlink:href="img/icons.svg#plus" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex items-start mt-3 is-active-enabled" data-toggle-content data-toggle-static>
+            <div class="text-xl font-light">
+              Онлайн-генератор случайного текста, Lorem
+              Ipsum на русском языке. Незаменимый помощник любого дизайнера, вебмастера и проектировщика. Прародителем
+              текста-рыбы является известный "Lorem Ipsum" — латинский текст,
+            </div>
+          </div>
+        </div>
+        <% } %>
+
+      </div>
+    </section>
+
+    <!-- Подписывайтесь на нас  -->
+    <section class="price-list section-padding">
+      <div class="price-list-block card">
+        <div class="text-center title">Подписывайтесь на нас </div>
+        <div class="text-center text-[25px] font-light mb-8">Узнавайте первыми о новых кейсах, <br> решениях и
+          специпредложениях</div>
+        <div class="flex justify-center mt-10">
+          <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+            <svg class="text-3xl icon">
+              <use xlink:href="img/icons.svg#telegramm" />
+            </svg>
+          </a>
+          <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+            <svg class="text-3xl icon">
+              <use xlink:href="img/icons.svg#instagramm" />
+            </svg>
+          </a>
+          <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+            <svg class="text-3xl icon">
+              <use xlink:href="img/icons.svg#vk" />
+            </svg>
+          </a>
+          <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+            <svg class="text-3xl icon">
+              <use xlink:href="img/icons.svg#pinterest" />
+            </svg>
+          </a>
+          <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+            <svg class="text-3xl icon">
+              <use xlink:href="img/icons.svg#youtube" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- вам может быть интересно -->
+    <section class="section-padding post">
+      <div class="section-top">
+        <div class="title">
+          вам может быть интересно
+        </div>
+        <div class="section-top-description">
+          Свежие публикации
+        </div>
+      </div>
+      <div class="-mx-2 post-slider swiper">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <div class="w-1/3 px-2 swiper-slide">
+            <div class="post-item card">
+              <div class="post-item-img ratio ratio-[395/292]">
+                <img src="img/test.jpg" alt="" class="absolute-image">
+              </div>
+              <div class="post-item-content">
+                <div class="post-item-title text-[27px] font-light mb-1.5">Пост 1</div>
+                <div class="text-xl font-light">
+                  Вы получите оптимальную стратегию доставки смыслов бренда и ценности его продуктов до целевой
+                  аудитории через рекламные и иные каналы коммуникаций.
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
+    </section>
+    <script>
+      new Swiper('.post-slider', {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: '.post-slider .slider-prev',
+          nextEl: '.post-slider .slider-next',
+        },
+        pagination: {
+          el: '.post-slider .slider-pagination',
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+          }
+        }
+      })
+    </script>
+
+
+    <section class="section-padding contacts">
+      <div class="flex items-center gap-10">
+        <div class="flex-1">
+
+          <div class="title mb-14">
+            Собственное производство и конструкторское бюро
+          </div>
+
+          <div>
+            <div class="text-[27px] font-light mb-1.5">Пост 1</div>
+            <div class="text-xl font-light">Иваново, ул. Парижских добровольцев, 1</div>
+          </div>
+
+          <div class="mt-4">
+            <div class="text-[27px] font-light mb-1.5">Офис в Москве:</div>
+            <div class="text-xl font-light">Долгопрудный, ул. 1-я Советская, д. 47. к.1, оф 501</div>
+          </div>
+
+          <div class="mt-4">
+            <div class="text-[27px] font-light mb-1.5">Контакты для связи:</div>
+            <div class="flex items-center">
+              <a href="javascript:;" class="text-lg sm:text-2xl btn btn-text btn-gray font-feature">
+                +7 (999) 252 99 99
+              </a>
+              <a href="javascript:;" class="ml-6 btn btn-text btn-stone">
+                <svg class="text-2xl icon">
+                  <use xlink:href="img/icons.svg#whatsapp" />
+                </svg>
+              </a>
+
+              <a href="javascript:;" class="ml-4 btn btn-text btn-stone">
+                <svg class="text-2xl icon">
+                  <use xlink:href="img/icons.svg#telegramm" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-18">
+            <button class="btn btn-stone btn-fill btn-[56px] rounded">ЗАПИСАТЬСЯ НА ВСТРЕЧУ</button>
+          </div>
+        </div>
+        <div class="overflow-hidden contacts-img ratio ratio-1/1 card">
+          <img src="img/contacts.jpg" alt="" class="absolute-image">
+          <%= _.template(require('./html-includes/absolute-video-button.html').default)() %>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 
