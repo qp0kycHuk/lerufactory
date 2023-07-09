@@ -1,0 +1,143 @@
+<% 
+const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 29.98, xl: 1280 + 29.98, }
+%>
+<%= _.template(require('./html-includes/header.html').default)({screens}) %>
+
+
+<section class="pt-0 section-padding started">
+  <div class="started-buner md:rounded-[20px] overflow-hidden">
+    <div class="inset-0 md:absolute started-buner-img">
+      <picture>
+        <source media="(min-width: <%= screens.lg %>px)" srcset="img/catalog-desctop.jpg">
+        <source media="(min-width: <%= screens.md %>px)" srcset="img/catalog-laptop.jpg">
+        <img src="img/catalog-mobile.jpg" alt="" class="md:absolute-image">
+      </picture>
+    </div>
+    <div class="started-buner-content">
+      <div class="text-gray md:text-[25px] font-light mb-2.5 leading-none relative w-max">
+        Пошив одежды оптом от 1 изделия
+        <button class="btn btn-icon btn-fill btn-stone  rounded-full btn-[12px] absolute left-full top-0 ml-2">
+          <div class="text-[9px]">?</div>
+        </button>
+      </div>
+      <div class="text-stone-700 title lg:text-[45px] font-alt uppercase leading-[1.1] tracking-[0.45px] mb-2.5">
+
+        Разработка и пошив юбок <br class="max-sm:hidden">
+        оптом для брендов в среднем <br class="max-sm:hidden">
+        и премиум сегментах
+      </div>
+      <div class="text-lg md:text-xl font-light leading-[1.2] text-gray mb-6 md:mb-11">
+        Помогаем компаниям создавать качественные и <br class="max-sm:hidden">
+        привлекательные коллекции, быть конкурентными <br class="max-sm:hidden">
+        на рынке. Пошив оптом от 1 изделия.
+      </div>
+      <div class="items-center gap-2 sm:gap-5 md:max-lg:flex">
+        <div class="mb-4 md:text-xl font-light leading-[1.2] text-gray">
+          У вас есть задача в <br class="max-sm:hidden">
+          производстве одежды?
+        </div>
+        <div class="flex gap-5">
+          <button class="btn btn-stone-600 btn-fill px-9 btn-[56px] rounded max-md:flex-1">ДА</button>
+          <button class="btn btn-gray btn-contur px-9 btn-[56px] rounded max-md:flex-1">НЕТ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section-padding">
+  <div class="flex max-lg:flex-col gap-6 lg:gap-[72px]">
+    <div class="relative about-video max-lg:order-10">
+      <div class="absolute inset-0">
+        <img src="img/about-img.jpg" alt="" class="absolute-image">
+      </div>
+      <%= _.template(require('./html-includes/absolute-video-button.html').default)() %>
+    </div>
+    <div class="flex flex-col flex-grow">
+      <div class="title mb-7">помогаем расти</div>
+      <div class="text-lg sm:text-2.1xl font-light">
+        Производственный сервис <br class="max-lg:hidden">
+        для брендов <br class="lg:hidden"> в среднем и <br class="max-lg:hidden">
+        премиальном сегментах
+      </div>
+      <div class="flex gap-10 mt-8 lg:mt-auto">
+        <div class="max-sm:basis-1/2 lg:basis-1/2">
+          <div class="text-4xl sm:text-5xl font-alt text-stone-400">2015</div>
+          <div class="font-light sm:text-xl">Год основания <br> компании</div>
+        </div>
+        <div class="max-sm:basis-1/2 lg:basis-1/2">
+          <div class="text-4xl sm:text-5xl font-alt text-stone-400">100 +</div>
+          <div class="font-light sm:text-xl">Количество <br> успешных коллекций</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid gap-4 mt-12 md:grid-cols-2 lg:grid-cols-3 ">
+    <div class="about-item card rounded-[10px] text-gray">
+      <div class="text-xl sm:text-[27px] font-light mb-1">Пошив оптом от 1 изделия</div>
+      <div class="font-light sm:text-xl">
+        Пошив оптом от 1 изделия
+        на собственном производстве
+        с соблюдением высоких <br class="sm:hidden">
+        требований к качеству
+      </div>
+      <button class="btn btn-icon btn-fill btn-stone absolute right-5 bottom-5 rounded-full btn-[37px]">
+        <div class="text-xl">?</div>
+      </button>
+    </div>
+    <div class="about-item card rounded-[10px] text-gray">
+      <div class="text-xl sm:text-[27px] font-light mb-1">Дизайн и конструирование</div>
+      <div class="font-light sm:text-xl">
+        Дизайн и конструирование одежды
+        для вашего бренда, а также пошив
+        сигнального образца.
+      </div>
+    </div>
+    <div class="about-item card rounded-[10px] text-gray md:max-lg:col-span-2">
+      <div class="text-xl sm:text-[27px] font-light mb-1">Конкурентные цены</div>
+      <div class="font-light sm:text-xl">
+        Конкурентные цены, высокий
+        уровень сервиса и доставка по
+        России.
+      </div>
+      <a href="javascript:;" class="absolute btn btn-text btn-gray right-8 bottom-6 ">
+        <span class="underline normal-case">Получить прайс-лист</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding catalog">
+  <div class="section-top">
+    <div class="title section-top-title">
+      Юбки нашего производства понравится вашей аудитории
+    </div>
+    <div class="section-top-description max-sm:mt-7 max-lg:mt-10">
+      Ознакомьтесь с видами одежды, которую мы готовы отшить для вашего бренда под ключ.
+
+      <div class="items-center gap-2 mt-6 sm:gap-5 md:flex max-lg:hidden">
+        <div class="md:text-xl font-light leading-[1.2] text-gray">
+          У вас уже есть эскиз <br class="max-sm:hidden">
+          или дизайн коллекции?
+        </div>
+        <div class="flex gap-5">
+          <button class="btn btn-stone-600 btn-fill px-9 btn-[56px] rounded max-md:flex-1">ДА</button>
+          <button class="btn btn-gray btn-contur px-9 btn-[56px] rounded max-md:flex-1">НЕТ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid gap-4 xs:grid-cols-2 lg:grid-cols-3">
+
+    <% for(let i = 0; i < 12; i++) { %>
+    <div class="catalog-item card">
+      <div class="catalog-item-img">
+        <img src="img/catalog-item.png" alt="" class="absolute-image">
+      </div>
+      <div class="catalog-item-title">Платья</div>
+    </div>
+    <% } %>
+
+  </div>
+</section>

@@ -18,7 +18,7 @@ module.exports = {
     screens: {
       xs: 420 + 29.98 + 'px',
       sm: 580 + 29.98 + 'px',
-      md: 720 + 29.98 + 'px',
+      md: 688 + 29.98 + 'px',
       lg: 992 + 29.98 + 'px',
       xl: (1280 + 29.98) + 'px',
     },
@@ -94,14 +94,12 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     require('@qpokychuk/tailwind-button-plugin')({
       lightColorOpacity: 0.16,
       lightColorOpacityHover: 0.24,
       withFocusStyles: true
     }),
     require('@qpokychuk/tailwind-ratio-plugin'),
-    require('tailwindcss-interaction-media'),
     require('./tailwind.form.js'),
 
   ],

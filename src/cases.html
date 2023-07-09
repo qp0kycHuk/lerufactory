@@ -1,0 +1,97 @@
+<% 
+const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 29.98, xl: 1280 + 29.98, }
+%>
+<%= _.template(require('./html-includes/header.html').default)({screens}) %>
+
+<section class="case section-padding">
+  <div class="section-top">
+    <div class="title section-top-title">
+      Кейсы Leru Group
+    </div>
+    <div class="section-top-description max-sm:mt-7 max-lg:mt-10">
+      Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого
+      дизайнера,
+
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-5">
+    <% for(let i = 0; i < 3; i++) { %>
+    <div class="case-item card">
+      <div class="relative case-item-img">
+        <img src="img/test.jpg" alt="" class="absolute-image">
+      </div>
+      <div class="case-item-content">
+        <div class="text-stone-400 mb-6 text-xl sm:text-[27px] ">
+          Создание коллекции и запуск <br>
+          продаж на Wildberries
+        </div>
+        <div class="font-light sm:text-xl text-stone-400">
+          Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник
+          любого дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
+          Ipsum" — латинский текст,
+        </div>
+        <div class="mt-6">
+          <div class="mb-4 text-xl font-light leading-[1.2] text-gray">
+            У вас такая же задача?
+          </div>
+          <div class="flex gap-5">
+            <button class="btn btn-stone-600 btn-fill px-9 btn-[56px] max-sm:w-full rounded">ДА</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="flex items-center justify-center mt-7 sm:mt-10">
+    <button class="btn btn-gray btn-text ">
+      <svg class="w-14 h-3.5">
+        <use xlink:href="img/icons.svg#arrow-left" />
+      </svg>
+    </button>
+    <div class="text-[27px] mx-3 font-light text-center ">
+      <a class="hover:underline" href="">1</a>
+      <a class="hover:underline" href="">2</a>
+      <a class="hover:underline" href="">3</a>
+      <a class="hover:underline" href="">4</a>
+      <a class="hover:underline" href="">5</a>
+      <a class="hover:underline" href="">6</a>
+      ...
+      <a class="hover:underline" href="">23</a>
+    </div>
+    <button class="btn btn-gray btn-text ">
+      <svg class="w-14 h-3.5">
+        <use xlink:href="img/icons.svg#arrow-right" />
+      </svg>
+    </button>
+  </div>
+
+
+</section>
+
+<!-- Подписывайтесь на нас  -->
+<section class="price-list section-padding">
+  <div class="price-list-block card">
+    <div class="text-center title">
+      Есть задача в разработке <br class="sm:hidden"> и/или <br class="max-sm:hidden"> пошиве коллекции?
+    </div>
+    <div class="text-center text-lg sm:text-[25px] font-light mb-8">
+      Свяжитесь с нами, и мы предложим решение.
+    </div>
+    <div class="flex items-center justify-center max-sm:flex-col max-sm:gap-6">
+      <div class="flex items-center gap-5">
+        <button class="btn btn-stone btn-light btn-icon btn-lg sm:btn-[68px] rounded-full">
+          <svg class="text-xl lg:text-2xl icon">
+            <use xlink:href="img/icons.svg#play" />
+          </svg>
+        </button>
+        <div class="text-xl font-light leading-tight">
+          Посмотрите <br>
+          презентацию <br>
+          нашей компании
+        </div>
+      </div>
+      <button class="rounded sm:ml-9 lg:ml-24 btn btn-stone btn-fill px-9 max-sm:w-full">СВЯЗАТЬСЯ</button>
+    </div>
+  </div>
+</section>

@@ -19,6 +19,7 @@ body {
   overflow-y    : scroll;
   background    : var(--bg3);
   font-family   : var(--font-base);
+  line-height   : 1.36;
 
 }
 
@@ -48,6 +49,16 @@ body {
   .section-padding {
     padding-top   : 95px;
     padding-bottom: 95px;
+
+    @media (max-width:theme('screens.xl')) {
+      padding-top   : 60px;
+      padding-bottom: 60px;
+    }
+
+    @media (max-width:theme('screens.md')) {
+      padding-top   : 45px;
+      padding-bottom: 45px;
+    }
   }
 
   .title {
@@ -57,6 +68,18 @@ body {
     line-height   : normal;
     color         : theme('colors.stone.400');
     text-transform: uppercase;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 36px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 30px;
+    }
+
+    @media (max-width:theme('screens.xs')) {
+      font-size: 25px;
+    }
   }
 
   .card {
@@ -78,12 +101,31 @@ body {
   align-items  : center;
   margin-bottom: 60px;
 
+  @media (max-width:theme('screens.xl')) {
+    align-items   : flex-start;
+    flex-direction: column;
+    margin-bottom : 40px;
+  }
+
+  @media (max-width:theme('screens.sm')) {
+    margin-bottom: 30px;
+  }
+
+
   &-description {
     flex-shrink: 0;
     width      : 530px;
     margin-left: auto;
     font-size  : 25px;
     font-weight: 300;
+
+    @media (max-width:theme('screens.xl')) {
+      width: 100%;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -110,10 +152,27 @@ body {
     position: relative;
     height  : 642px;
 
+    @media (max-width:theme('screens.xl')) {
+      height: 796px;
+    }
+
+    @media (max-width:theme('screens.md')) {
+      height: auto;
+    }
+
     &-content {
       position: relative;
       padding : 112px 70px 80px;
       z-index : 2;
+
+      @media (max-width:theme('screens.xl')) {
+        padding: 66px 38px;
+      }
+
+      @media (max-width:theme('screens.md')) {
+        margin-top: 24px;
+        padding   : 0;
+      }
     }
   }
 
@@ -126,11 +185,25 @@ body {
     height       : 396px;
     overflow     : hidden;
     border-radius: 15px;
+
+    @media (max-width:theme('screens.xl')) {
+      width: 500px;
+    }
+
+    @media (max-width:theme('screens.lg')) {
+      width : 100%;
+      height: 400px;
+    }
   }
 
   &-item {
     position: relative;
     padding : 44px 32px;
+
+    @media (max-width:theme('screens.sm')) {
+      min-height: 165px;
+      padding   : 28px 20px;
+    }
   }
 }
 
@@ -140,7 +213,18 @@ body {
     width   : 100%;
     height  : 480px;
 
+    @media (max-width:theme('screens.sm')) {
+      height : 430px;
+      padding: 20px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      height : 372px;
+      padding: 20px;
+    }
+
     img {
+      position  : relative;
       object-fit: scale-down;
     }
   }
@@ -149,6 +233,11 @@ body {
     padding    : 0 28px 25px;
     font-size  : 27px;
     font-weight: 300;
+
+    @media (max-width:theme('screens.sm')) {
+      padding  : 0 12px 15px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -165,6 +254,11 @@ body {
     padding    : 24px 12px 15px;
     font-size  : 27px;
     font-weight: 300;
+
+    @media (max-width:theme('screens.sm')) {
+      padding  : 15 12px 10px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -185,6 +279,10 @@ body {
     flex-shrink   : 0;
     width         : 780px;
     gap           : 12px;
+
+    @media (max-width:theme('screens.xl')) {
+      width: 100%;
+    }
   }
 
   &-item {
@@ -197,18 +295,19 @@ body {
   }
 
   &-form {
-    padding: 62px;
+    @media (min-width:theme('screens.sm')) {
+      padding: 62px;
+    }
   }
 }
 
 .price-list {
   &-block {
-    width         : 980px;
-    max-width     : 100%;
-    margin-right  : auto;
-    margin-left   : auto;
-    padding-top   : 65px;
-    padding-bottom: 65px;
+    width       : 980px;
+    max-width   : 100%;
+    margin-right: auto;
+    margin-left : auto;
+    padding     : 65px 20px;
 
   }
 }
@@ -220,12 +319,41 @@ body {
     padding    : 10px;
     gap        : 70px;
 
+    @media (max-width:theme('screens.xl')) {
+      flex-direction: column;
+      gap           : 40px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      padding: 6px;
+      gap    : 24px;
+    }
+
     &-img {
       flex-shrink  : 0;
       width        : 668px;
+      max-width    : 100%;
       height       : 474px;
       overflow     : hidden;
       border-radius: 10px;
+
+      @media (max-width:theme('screens.sm')) {
+        height: 217px;
+      }
+    }
+
+    &-content {
+      @media (max-width:theme('screens.xl')) {
+        padding-right : 40px;
+        padding-bottom: 40px;
+        padding-left  : 40px;
+      }
+
+      @media (max-width:theme('screens.sm')) {
+        padding-right : 6px;
+        padding-bottom: 35px;
+        padding-left  : 6px;
+      }
     }
   }
 }
@@ -241,7 +369,7 @@ body {
   &-img {
     position     : relative;
     overflow     : hidden;
-    border-radius: 15px;
+    border-radius: 10px;
   }
 }
 
@@ -249,11 +377,15 @@ body {
   &-content {
     width: 600px;
 
+    @media (max-width:theme('screens.xl')) {
+      width: 100%;
+    }
   }
 
   &-form {
-    padding: 72px 64px;
-
+    @media (min-width:theme('screens.sm')) {
+      padding: 72px 64px;
+    }
   }
 
   &-btn {
@@ -267,6 +399,10 @@ body {
   &-img {
     flex-shrink: 0;
     width      : 650px;
+
+    @media (max-width:theme('screens.lg')) {
+      width: 100%;
+    }
   }
 }
 
@@ -287,5 +423,20 @@ body {
   &:not(.toggle-active) {
     transform: translateX(80px);
     clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+}
+
+.content {
+  width       : 780px;
+  max-width   : 100%;
+  margin-right: auto;
+  margin-left : auto;
+
+  img {
+    display      : block;
+    overflow     : hidden;
+    margin-top   : 32px !important;
+    margin-bottom: 32px !important;
+    border-radius: 15px;
   }
 }

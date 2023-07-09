@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пошив брендовой (женской) одежды</title>
+
+
+  <script>
+    const screens = window.screens = {
+      xs: 420 + 29.98,
+      sm: 580 + 29.98,
+      md: 688 + 29.98,
+      lg: 992 + 29.98,
+      xl: 1280 + 29.98,
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="root">
+    <header class="flex items-center pt-5 pb-2 sm:pt-8 sm:pb-6 header">
+      <div class="mr-auto -ml-1 header-logo md:max-lg:w-56">
+        <picture>
+          <source media="(min-width: <%= screens.xs %>px)" srcset="img/logo.png">
+          <img src="img/mobile-logo.png" alt="">
+        </picture>
+      </div>
+      <div class="flex items-center max-md:hidden">
+        <svg class="mr-1 text-lg icon text-stone-500">
+          <use xlink:href="img/icons.svg#location" />
+        </svg>
+        <div class="text-lg font-light text-zinc-700">Москва</div>
+      </div>
+      <button class="ml-6 font-light uppercase rounded max-md:hidden btn btn-gray btn-contur px-9 lg:ml-14">ОСТАВИТЬ
+        ЗАЯВКУ</button>
+      <button class="ml-6 btn btn-stone btn-icon lg:ml-9 md:hidden">
+        <svg class="icon text-3.5xl">
+          <use xlink:href="img/icons.svg#phone" />
+        </svg>
+      </button>
+      <button class="ml-3 md:ml-6 btn btn-stone btn-icon lg:ml-9">
+        <svg class="icon text-3.5xl">
+          <use xlink:href="img/icons.svg#share" />
+        </svg>
+      </button>
+      <button class="ml-3 btn btn-stone btn-icon btn-text" data-toggle-link="menu">
+        <svg class="text-5xl icon">
+          <use xlink:href="img/icons.svg#menu" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="menu card" id="menu">
+      <div class="flex flex-col items-start gap-3">
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">Кейсы</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">Контакты</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">каталог
+          решений</a>
+        <a href="javascript:;" class="text-3xl title btn btn-stone btn-text " data-toggle-link="menu">блог</a>
+      </div>
+      <div class="mt-auto">
+        <img src="img/logo.png" alt="">
+      </div>
+      <button class="absolute right-24 top-2 btn btn-stone btn-icon" data-toggle-link="menu">
+        <svg class="text-2xl icon">
+          <use xlink:href="img/icons.svg#cross" />
+        </svg>
+      </button>
+    </div>
