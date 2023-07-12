@@ -47,7 +47,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
 <section class="section-padding">
   <div class="content">
     <div class="title mb-7">Как мы создали коллекцию и запустили продажи на Wildberries</div>
-    <div class="space-y-3 sm:text-[25px] font-light">
+    <div class="flex flex-col gap-3 sm:text-[25px] font-light">
       <p>
         Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого
         дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
@@ -56,7 +56,18 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
         Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого
         дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
       </p>
-      <img src="img/case.jpg" alt="">
+      <div class="content-slider swiper my-8 -mx-2">
+        <div class="swiper-wrapper">
+          <% for(let i = 0; i < 10; i++) { %>
+          <a href="img/case.jpg" data-fancybox="id-1" class="swiper-slide  px-2">
+            <div class="rounded-2xl overflow-hidden">
+              <img src="img/case.jpg" alt="">
+            </div>
+          </a>
+          <% } %>
+        </div>
+        <%= _.template(require('./html-includes/slider-navigation.html').default)() %>
+      </div>
       <p>
         Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого
         дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
@@ -65,7 +76,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
         Онлайн-генератор случайного текста, правильный Lorem Ipsum на русском языке. Незаменимый помощник любого
         дизайнера, вебмастера и проектировщика. ... Прародителем текста-рыбы является известный "Lorem
       </p>
-      <div class="relative">
+      <div class="relative rounded-2xl overflow-hidden my-8">
         <img src="img/case.jpg" alt="">
         <%= _.template(require('./html-includes/absolute-video-button.html').default)() %>
 
@@ -81,3 +92,20 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     </div>
   </div>
 </section>
+<script>
+  new Swiper('.content-slider', {
+    slidesPerView: 'auto',
+    navigation: {
+      prevEl: '.content-slider .slider-prev',
+      nextEl: '.content-slider .slider-next',
+    },
+    pagination: {
+      el: '.content-slider .slider-pagination',
+      type: 'fraction',
+      renderFraction: function(currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
+      }
+    }
+
+  })
+</script>

@@ -440,11 +440,112 @@ body {
   margin-right: auto;
   margin-left : auto;
 
-  img {
-    display      : block;
-    overflow     : hidden;
-    margin-top   : 32px !important;
-    margin-bottom: 32px !important;
-    border-radius: 15px;
+}
+
+.prose {
+  font-weight: 300;
+
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom : 1em;
+    font-family   : var(--font-alt);
+    font-weight   : 400;
+    line-height   : normal;
+    text-transform: uppercase;
+
+
+  }
+
+  h1 {
+    font-size: 50px;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 36px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 30px;
+    }
+
+    @media (max-width:theme('screens.xs')) {
+      font-size: 25px;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 30px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 24px;
+    }
+
+    @media (max-width:theme('screens.xs')) {
+      font-size: 20px;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 25px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 20px;
+    }
+
+    @media (max-width:theme('screens.xs')) {
+      font-size: 18px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 1em;
+    font-size    : 27px;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 22px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 20px;
+    }
+
+    @media (max-width:theme('screens.xs')) {
+      font-size: 16px;
+    }
+  }
+
+  ul,
+  ol,
+  p {
+    margin-bottom: 1em;
+    font-size    : 20px;
+    line-height  : 1.5;
+
+    @media (max-width:theme('screens.lg')) {
+      font-size: 16px;
+    }
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 14px;
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style  : disc;
+  }
+
+  ol {
+    padding-left: 20px;
+    list-style  : decimal;
   }
 }
