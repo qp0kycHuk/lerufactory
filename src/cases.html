@@ -3,7 +3,14 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
 %>
 <%= _.template(require('./html-includes/header.html').default)({screens}) %>
 
+<section class="py-0 font-light breadcrumps max-sm:text-sm">
+  <a href="/" class="hover:underline">Главная</a> /
+  <a href="" class="hover:underline">Кейсы</a> /
+  Как мы создали коллекцию и запустили продажи на Wildberries
+</section>
+
 <section class="case section-padding">
+
   <div class="section-top">
     <div class="title section-top-title">
       Кейсы Leru Group
