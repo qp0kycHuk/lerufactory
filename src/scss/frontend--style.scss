@@ -170,6 +170,10 @@ body {
     height  : 642px;
 
     @media (max-width:theme('screens.xl')) {
+      height: 576px;
+    }
+
+    @media (max-width:theme('screens.lg')) {
       height: 796px;
     }
 
