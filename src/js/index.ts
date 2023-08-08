@@ -7,6 +7,7 @@ import tab from 'npm-kit-tab'
 import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade } from 'swiper'
+// import animations from './animations'
 
 import '../scss/index.scss'
 
@@ -24,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
   showPass.init()
+  // animations.init()
   scrollTo.init()
   tab.init()
   toggle.init()

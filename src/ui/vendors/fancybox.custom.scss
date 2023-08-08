@@ -10,3 +10,8 @@
 
   }
 }
+
+.is-compact .fancybox__content>.f-button.is-close-btn {
+  --f-button-color: #000;
+  --f-button-bg   : none;
+}

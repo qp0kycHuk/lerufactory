@@ -4,7 +4,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
 <%= _.template(require('./html-includes/header.html').default)({screens}) %>
 
 <section class="pt-0 section-padding started">
-  <div class="started-buner md:rounded-[20px] overflow-hidden">
+  <div class="started-buner md:rounded-[20px] md:overflow-hidden">
     <div class="inset-0 md:absolute started-buner-img">
       <picture>
         <source media="(min-width: <%= screens.lg %>px)" srcset="img/started-desctop.jpg">
