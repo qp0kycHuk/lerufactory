@@ -924,7 +924,13 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     </div>
     <div class="overflow-hidden contacts-img ratio ratio-1/1 card">
       <img src="img/contacts.jpg" alt="" class="absolute-image">
-      <%= _.template(require('./html-includes/absolute-video-button.html').default)() %>
+      <a href="https://youtu.be/VOPZf3zWceo" data-fancybox class="absolute inset-0 flex p-10 btn-group">
+        <button class="ml-auto mt-auto btn btn-stone btn-light btn-icon btn-lg sm:btn-[82px] lg:btn-[100px] rounded-full">
+          <svg class="text-xl lg:text-2xl icon">
+            <use xlink:href="img/icons.svg#play" />
+          </svg>
+        </button>
+      </a>
     </div>
   </div>
 </section>
