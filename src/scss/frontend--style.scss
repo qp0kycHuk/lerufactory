@@ -229,6 +229,29 @@ body {
 }
 
 .catalog-item {
+  @media(hover) {
+    position: relative;
+
+    &:hover &-img-front {
+      opacity: 0;
+    }
+
+    &-img-front,
+    &-img-back {
+      transition: .2s;
+    }
+
+    &:not(:hover) &-img-back {
+      opacity: 0;
+    }
+  }
+
+  @media(hover:none) {
+    &-img-back {
+      display: none;
+    }
+  }
+
   &-img {
     position: relative;
     width   : 100%;
@@ -245,7 +268,7 @@ body {
     }
 
     img {
-      position  : relative;
+      // position  : relative;
       object-fit: scale-down;
     }
   }
