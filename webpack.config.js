@@ -13,6 +13,7 @@ const PUBLIC_PATH = path.resolve(__dirname, 'dist')
 const htmlWebpackPluginDefaults = {
   scriptLoading: 'blocking',
   inject: 'head',
+  minify: false
 }
 
 module.exports = {
