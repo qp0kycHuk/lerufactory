@@ -188,10 +188,12 @@ body {
 
     &-content {
       position: relative;
+      width   : min(880px, 100%);
       padding : 112px 70px 80px;
       z-index : 2;
 
       @media (max-width:theme('screens.xl')) {
+        width  : min(780px, 100%);
         padding: 66px 38px;
       }
 
