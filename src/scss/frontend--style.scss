@@ -191,10 +191,12 @@ body {
 
     &-content {
       position: relative;
+      width   : min(880px, 100%);
       padding : 112px 70px 80px;
       z-index : 2;
 
       @media (max-width:theme('screens.xl')) {
+        width  : min(780px, 100%);
         padding: 66px 38px;
       }
 
@@ -419,6 +421,8 @@ body {
 
 
 .cooperation {
+  counter-reset: coop-btn;
+
   &-content {
     width: 600px;
 
@@ -434,6 +438,27 @@ body {
   }
 
   &-btn {
+    text-align       : left;
+    counter-increment: coop-btn;
+
+    &-counter {
+      display    : flex;
+      align-items: flex-start;
+      gap        : .5em;
+
+      &::before {
+        content: counter(coop-btn) '.';
+
+        font-size  : 14px;
+        line-height: 1.25;
+
+        @media (min-width: theme('screens.sm')) {
+          font-size: 27px;
+        }
+      }
+    }
+
+
     &.tab-active {
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) !important;
     }

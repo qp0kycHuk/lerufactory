@@ -155,7 +155,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.catalog-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -200,7 +200,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.material-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -246,7 +246,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.models-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     },
@@ -298,9 +298,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     <div class="p-4 border rounded sm:px-7 lg:px-8 question-item border-stone sm:py-7" data-toggle-cover>
       <div class="flex items-center">
         <div class="text-xl sm:text-[27px] font-light">Пошив по вашим лекалам</div>
-        <button
-          class="ml-auto border max-sm:btn-[32px] btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
-          data-toggle-link>
+        <button class="ml-auto border max-sm:btn-[32px] btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
           <svg class="transition sm:text-2xl icon">
             <use xlink:href="img/icons.svg#plus" />
           </svg>
@@ -397,7 +395,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.case-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -433,8 +431,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
         на пошив
       </div>
 
-      <div
-        class="w-full  lg:w-[662px] sm:h-[466px] h-[217px] relative rounded-2xl overflow-hidden  xl:hidden mb-4 sm:mb-6">
+      <div class="w-full  lg:w-[662px] sm:h-[466px] h-[217px] relative rounded-2xl overflow-hidden  xl:hidden mb-4 sm:mb-6">
         <img src="img/your-smeta.jpg" alt="" class="absolute-image">
       </div>
 
@@ -557,7 +554,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.team-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -610,8 +607,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
                 <div class="post-item-title text-xl sm:text-[27px] font-light sm:mb-1">Анна Волчок</div>
                 <div class="font-light sm:text-lg">TexIco</div>
               </div>
-              <a href="https://youtu.be/VOPZf3zWceo" data-fancybox
-                class="ml-auto lg:mr-3 btn btn-stone btn-light btn-icon btn-lg sm:btn-[82px] lg:btn-[100px] rounded-full">
+              <a href="https://youtu.be/VOPZf3zWceo" data-fancybox class="ml-auto lg:mr-3 btn btn-stone btn-light btn-icon btn-lg sm:btn-[82px] lg:btn-[100px] rounded-full">
                 <svg class="text-xl lg:text-2xl icon">
                   <use xlink:href="img/icons.svg#play" />
                 </svg>
@@ -635,7 +631,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.reviews-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -656,26 +652,30 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
         своевременно и по привлекательной цене
       </div>
       <div class="grid grid-cols-2 gap-3 mt-8">
-        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7"
-          data-tab-link="cooperation-1">
-          <span class="text-sm sm:text-[27px]">1. ЗНАКОМСТВО</span>
+        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7" data-tab-link="cooperation-1">
+          <div class="cooperation-btn-counter">
+            <span class="text-sm sm:text-[27px] sm:leading-tight">ЗНАКОМСТВО</span>
+          </div>
         </button>
-        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7"
-          data-tab-link="cooperation-2">
-          <span class="text-sm sm:text-[27px]">2. РЕШЕНИЕ</span>
+        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7" data-tab-link="cooperation-2">
+          <div class="cooperation-btn-counter">
+            <span class="text-sm sm:text-[27px] sm:leading-tight">РЕШЕНИЕ</span>
+          </div>
         </button>
-        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7"
-          data-tab-link="cooperation-3">
-          <span class="text-sm sm:text-[27px]">3. ДОГОВОР</span>
+        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7" data-tab-link="cooperation-3">
+          <div class="cooperation-btn-counter">
+            <span class="text-sm sm:text-[27px] sm:leading-tight">Сигнальный образец</span>
+          </div>
         </button>
-        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7"
-          data-tab-link="cooperation-4">
-          <span class="text-sm sm:text-[27px]">4. ПРОИЗВОДСТВО</span>
+        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray justify-start sm:btn-[90px] px-4 sm:px-7" data-tab-link="cooperation-4">
+          <div class="cooperation-btn-counter">
+            <span class="text-sm sm:text-[27px] sm:leading-tight">ПРОИЗВОДСТВО</span>
+          </div>
         </button>
-        <button
-          class="cooperation-btn btn btn-neutral-100 btn-fill text-gray max-sm:col-span-2 sm:justify-start sm:btn-[90px] px-4 sm:px-7"
-          data-tab-link="cooperation-5">
-          <span class="text-sm sm:text-[27px]">5. ДОСТАВКА.</span>
+        <button class="cooperation-btn btn btn-neutral-100 btn-fill text-gray max-sm:col-span-2 sm:justify-start sm:btn-[90px] px-4 sm:px-7" data-tab-link="cooperation-5">
+          <div class="cooperation-btn-counter">
+            <span class="text-sm sm:text-[27px] sm:leading-tight">ДОСТАВКА.</span>
+          </div>
         </button>
       </div>
     </div>
@@ -778,9 +778,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     <div class="p-4 border rounded sm:px-7 lg:px-8 question-item border-stone sm:py-7" data-toggle-cover>
       <div class="flex items-center">
         <div class="text-xl sm:text-[27px] font-light">1. С какими видами ткани вы работете?</div>
-        <button
-          class="ml-auto border max-sm:btn-[32px] btn btn-stone btn-whitebg border-stone btn-icon question-item-btn"
-          data-toggle-link>
+        <button class="ml-auto border max-sm:btn-[32px] btn btn-stone btn-whitebg border-stone btn-icon question-item-btn" data-toggle-link>
           <svg class="transition sm:text-2xl icon">
             <use xlink:href="img/icons.svg#plus" />
           </svg>
@@ -882,7 +880,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     pagination: {
       el: '.post-slider .slider-pagination',
       type: 'fraction',
-      renderFraction: function (currentClass, totalClass) {
+      renderFraction: function(currentClass, totalClass) {
         return '<span class="' + currentClass + '"></span>/<span class="' + totalClass + '"></span>';
       }
     }
@@ -938,8 +936,7 @@ const screens = { xs: 420 + 29.98,  sm: 580 + 29.98, md: 688 + 29.98, lg: 992 + 
     <div class="overflow-hidden contacts-img ratio ratio-1/1 card">
       <img src="img/contacts.jpg" alt="" class="absolute-image">
       <a href="https://youtu.be/VOPZf3zWceo" data-fancybox class="absolute inset-0 flex p-10 btn-group">
-        <button
-          class="ml-auto mt-auto btn btn-stone btn-light btn-icon btn-lg sm:btn-[82px] lg:btn-[100px] rounded-full">
+        <button class="ml-auto mt-auto btn btn-stone btn-light btn-icon btn-lg sm:btn-[82px] lg:btn-[100px] rounded-full">
           <svg class="text-xl lg:text-2xl icon">
             <use xlink:href="img/icons.svg#play" />
           </svg>
