@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.17",
-    "@qpokychuk/fonts": "^1.0.6",
+    "@qpokychuk/fonts": "^1.0.10",
     "@qpokychuk/ripple": "^1.5.6",
     "@qpokychuk/tailwind-ratio-plugin": "^2.0.0",
     "dotenv-webpack": "^8.0.1",
